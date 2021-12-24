@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Joaquim_teste</string>
+
+    <string name="fragment_home">Home</string>
+
+
 </resources>

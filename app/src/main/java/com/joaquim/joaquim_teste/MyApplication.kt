@@ -3,6 +3,7 @@ package com.joaquim.joaquim_teste
 import android.app.Application
 import androidx.multidex.MultiDexApplication
 import com.joaquim.joaquim_teste.data.commom.ObjectBox
+import com.joaquim.joaquim_teste.data.commom.SharedPrefs
 import com.joaquim.joaquim_teste.koinModules.commom.injectCommonClassesModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -22,6 +23,7 @@ class MyApplication : MultiDexApplication() {
 
         initKoin()
         initObjectBox()
+        initLoginPrefs()
 
     }
 
@@ -37,6 +39,10 @@ class MyApplication : MultiDexApplication() {
 
     private fun initObjectBox() {
         ObjectBox.init(this)
+    }
+
+    private fun initLoginPrefs() {
+        SharedPrefs.getPrefs(globalContext)
     }
 
 }

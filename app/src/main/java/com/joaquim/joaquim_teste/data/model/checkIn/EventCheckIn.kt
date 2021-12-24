@@ -1,6 +1,8 @@
 package com.joaquim.joaquim_teste.data.model.checkIn
 
 data class EventCheckIn(
-    val userName: String,
-    val dateUserCheckIn: Long
+    val checkInUid: String,
+    val userUid: String,
+    val eventId: String,
+    val dateUserCheckIn: String
 )
