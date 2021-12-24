@@ -1,4 +1,4 @@
-package com.example.joaquim_teste
+package com.joaquim.joaquim_teste
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

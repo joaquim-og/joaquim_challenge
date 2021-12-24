@@ -1,4 +1,4 @@
-package com.example.joaquim_teste
+package com.joaquim.joaquim_teste
 
 import org.junit.Test
 
