@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:4983569339120128658",
-      "lastPropertyId": "3:2231474335378558631",
+      "lastPropertyId": "6:6549718940306501944",
       "name": "LocalObjectBoxDbEventCheckIn",
       "properties": [
         {
@@ -15,14 +15,24 @@
           "flags": 1
         },
         {
-          "id": "2:6707319898604760194",
-          "name": "userName",
+          "id": "3:2231474335378558631",
+          "name": "dateUserCheckIn",
           "type": 9
         },
         {
-          "id": "3:2231474335378558631",
-          "name": "dateUserCheckIn",
-          "type": 6
+          "id": "4:7699388941899673072",
+          "name": "checkInUid",
+          "type": 9
+        },
+        {
+          "id": "5:1021523425533392603",
+          "name": "userUid",
+          "type": 9
+        },
+        {
+          "id": "6:6549718940306501944",
+          "name": "eventUid",
+          "type": 9
         }
       ],
       "relations": []
@@ -120,17 +130,44 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "4:4198216423527204966",
+      "lastPropertyId": "2:2507909486276085299",
+      "name": "LocalObjectBoxDbEventDetails",
+      "properties": [
+        {
+          "id": "1:1483976106949233289",
+          "name": "boxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2507909486276085299",
+          "name": "eventDetailsUID",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:6108419627592309719",
+          "name": "eventDetailsInfos",
+          "targetId": "2:2337123339834781714"
+        }
+      ]
     }
   ],
-  "lastEntityId": "3:7335549398468034733",
+  "lastEntityId": "4:4198216423527204966",
   "lastIndexId": "0:0",
-  "lastRelationId": "1:9216765345666856979",
+  "lastRelationId": "2:6108419627592309719",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    6707319898604760194
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

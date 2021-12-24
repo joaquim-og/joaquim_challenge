@@ -14,9 +14,6 @@ data class LocalObjectBoxDbEventDetailsItem(
     @Id
     var boxId: Long = 0L,
 
-    @NameInDb("eventDetailUID")
-    var eventDetailUID: String? = UUID.randomUUID().toString(),
-
     @NameInDb("eventDetailDate")
     var eventDetailDate: Long? = null,
 
@@ -40,6 +37,9 @@ data class LocalObjectBoxDbEventDetailsItem(
 
     @NameInDb("eventDetailPrice")
     var eventDetailPrice: Double? = null,
+
+    @NameInDb("eventDetailUID")
+    var eventDetailUID: String? = "${eventDetailId}_${eventDetailTitle}",
 
 ) {
 
