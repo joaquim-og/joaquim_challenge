@@ -1,0 +1,136 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:4983569339120128658",
+      "lastPropertyId": "3:2231474335378558631",
+      "name": "LocalObjectBoxDbEventCheckIn",
+      "properties": [
+        {
+          "id": "1:5285592425899004863",
+          "name": "boxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6707319898604760194",
+          "name": "userName",
+          "type": 9
+        },
+        {
+          "id": "3:2231474335378558631",
+          "name": "dateUserCheckIn",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:2337123339834781714",
+      "lastPropertyId": "10:2681758065428714369",
+      "name": "LocalObjectBoxDbEventDetailsItem",
+      "properties": [
+        {
+          "id": "1:7824665203527718325",
+          "name": "boxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5241470047887703215",
+          "name": "eventDetailUID",
+          "type": 9
+        },
+        {
+          "id": "3:8960655062561271047",
+          "name": "eventDetailDate",
+          "type": 6
+        },
+        {
+          "id": "4:1705937323032585848",
+          "name": "eventDetailTitle",
+          "type": 9
+        },
+        {
+          "id": "5:297338894412052793",
+          "name": "eventDetailDescription",
+          "type": 9
+        },
+        {
+          "id": "6:782473518447832966",
+          "name": "eventDetailId",
+          "type": 9
+        },
+        {
+          "id": "7:3764578734567269071",
+          "name": "eventDetailImage",
+          "type": 9
+        },
+        {
+          "id": "8:3252166643184151657",
+          "name": "eventDetailLat",
+          "type": 9
+        },
+        {
+          "id": "9:7562664569788179827",
+          "name": "eventDetailLng",
+          "type": 9
+        },
+        {
+          "id": "10:2681758065428714369",
+          "name": "eventDetailPrice",
+          "type": 8
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:9216765345666856979",
+          "name": "eventDetailPeople",
+          "targetId": "3:7335549398468034733"
+        }
+      ]
+    },
+    {
+      "id": "3:7335549398468034733",
+      "lastPropertyId": "4:5259439283389761403",
+      "name": "LocalObjectBoxDbUser",
+      "properties": [
+        {
+          "id": "1:8981941993607246720",
+          "name": "boxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:844975158453808187",
+          "name": "userUid",
+          "type": 9
+        },
+        {
+          "id": "3:7167611395509054106",
+          "name": "userName",
+          "type": 9
+        },
+        {
+          "id": "4:5259439283389761403",
+          "name": "userEmail",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:7335549398468034733",
+  "lastIndexId": "0:0",
+  "lastRelationId": "1:9216765345666856979",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
