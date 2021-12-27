@@ -2,6 +2,15 @@
     <string name="app_name">Joaquim_teste</string>
 
     <string name="fragment_home">Home</string>
+    <string name="card_home_event_detail_place_holder_title">Event Title Placeholder</string>
+    <string name="card_home_event_detail_place_holder_text">#Placeholder_Text</string>
+    <string name="card_home_event_item_price_text">R$ %1$s</string>
+    <string name="fragment_home_title">Eventos disponíveis</string>
+    <string name="no_network_error">Opa, você não está conectado a internet 📡</string>
+    <string name="fragment_request_location_dialog_title">Precisamos de sua localização</string>
+    <string name="fragment_request_location_dialog_text">Precisamos de sua autorização para exibirmos o mapa com a localização do evento selecionado 😉.</string>
+    <string name="fragment_request_location_dialog_button">Entendi</string>
+    <string name="access_fine_location_permissions_denied">Precisamos de sua permissão para exibirmos as informações do evento selecionado</string>
 
 
 </resources>
