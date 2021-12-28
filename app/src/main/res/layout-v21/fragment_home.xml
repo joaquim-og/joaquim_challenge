@@ -8,9 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_home_root_constraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
-        android:background="@color/white">
+        android:layout_marginTop="5dp"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/fragment_home_event_title"

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="eventItem"
             type="com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetailsItem" />
@@ -14,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white">
+        android:layout_marginTop="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_home_event_item_card"
@@ -23,7 +23,6 @@
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
             app:cardElevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +34,6 @@
                 android:id="@+id/card_home_event_item_constraint"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +42,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_goneMarginEnd="15dp">
 
+                <ImageView
+                    android:id="@+id/card_home_img_event"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/card_home_event_item_title"
@@ -59,8 +65,8 @@
                     android:textAlignment="textStart"
                     android:textSize="@dimen/general_title_dimen"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@string/card_home_event_detail_place_holder_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/card_home_img_event"
+                    tools:text="@string/general_text_place_holder_title" />
 
 
                 <TextView
@@ -80,7 +86,7 @@
                     app:getEventDate="@{eventItem.eventDetailDate}"
                     app:layout_constraintStart_toStartOf="@+id/card_home_event_item_title"
                     app:layout_constraintTop_toBottomOf="@+id/card_home_event_item_title"
-                    tools:text="@string/card_home_event_detail_place_holder_text" />
+                    tools:text="@string/general_text_place_holder_text" />
 
 
                 <TextView
@@ -95,14 +101,14 @@
                     android:maxLines="2"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    app:getEventPrice="@{eventItem.eventDetailPrice}"
                     android:textAlignment="textStart"
                     android:textSize="@dimen/card_home_event_detail_normal_dimen"
                     app:drawableStartCompat="@drawable/ic_baseline_monetization_on_24"
+                    app:getEventPrice="@{eventItem.eventDetailPrice}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/card_home_event_item_date"
                     app:layout_constraintTop_toBottomOf="@+id/card_home_event_item_date"
-                    tools:text="@string/card_home_event_item_price_text" />
+                    tools:text="@string/general_text_place_holder_price_text" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

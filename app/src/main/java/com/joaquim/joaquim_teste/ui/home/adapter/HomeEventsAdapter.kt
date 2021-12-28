@@ -10,6 +10,7 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.joaquim.joaquim_teste.MyApplication.Companion.globalContext
 import com.joaquim.joaquim_teste.R
 import com.joaquim.joaquim_teste.data.commom.extensions.changeSeparator
 import com.joaquim.joaquim_teste.data.commom.extensions.toDate
@@ -79,8 +80,12 @@ class HomeEventsAdapter(
                 cardHomeEventItemTitle.text = event.eventDetailTitle
                 cardHomeEventItemDate.text = event.eventDetailDate
                 cardHomeEventItemPrice.text = event.eventDetailPrice
-                //TODO SET IMG
-//                Glide.with(this).load(mask.img).into(mask_item_img)
+
+                Glide.with(globalContext)
+                    .load(event.eventDetailImage)
+                    .placeholder(R.drawable.ic_baseline_downloading_24)
+                    .error(R.drawable.ic_baseline_image_not_supported_24)
+                    .into(cardHomeImgEvent)
             }
         }
     }
@@ -89,16 +94,14 @@ class HomeEventsAdapter(
 
 @BindingAdapter("getEventDate")
 fun setEventDate(textView: TextView, eventDate: String) {
-    //TODO FIX
-    //java.lang.NumberFormatException: For input string: "Mon Aug 20 14:00:00 GMT-03:00 2018"
-//    textView.text = textView.context.getString(
-//        R.string.card_home_event_detail_place_holder_text).replace("#Placeholder_Text", eventDate.toLong().toDate())
+    textView.text = textView.context.getString(
+        R.string.general_text_place_holder_text).replace("#Placeholder_Text", eventDate.toDate())
 }
 
 @BindingAdapter("getEventPrice")
 fun setEventPrice(textView: TextView, eventPrice: String) {
     textView.text = textView.context.getString(
-        R.string.card_home_event_item_price_text,
+        R.string.general_text_place_holder_price_text,
         eventPrice.changeSeparator()
     )
 }
