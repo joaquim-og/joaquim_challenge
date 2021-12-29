@@ -1,17 +1,17 @@
 package com.joaquim.joaquim_teste.data.repository.checkin
 
 import com.joaquim.joaquim_teste.data.model.checkIn.LocalObjectBoxDbEventCheckIn
-import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetails
-import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetailsItem
-import com.joaquim.joaquim_teste.data.model.user.LocalObjectBoxDbUser
 
 interface CheckInRepository {
 
     fun createLocalUserCheckIn(
-        eventToCheckIn: LocalObjectBoxDbEventDetailsItem,
-        user: LocalObjectBoxDbUser
+        eventDetailUID: String?,
+        user: String?,
+        userCheckedInEvent: (Boolean) -> Unit
     )
 
     fun getLocalUserCheckIn(eventDetailUID: String?, userUid: String?): LocalObjectBoxDbEventCheckIn?
+
+    fun deleteLocalEventCheckIn(eventUID: String?, userUid: String?): Boolean
 
 }

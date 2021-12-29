@@ -4,6 +4,7 @@ import android.net.ConnectivityManager
 import androidx.core.content.ContextCompat
 import com.joaquim.joaquim_teste.MyApplication.Companion.globalContext
 import com.joaquim.joaquim_teste.data.commom.CheckPermissions
+import com.joaquim.joaquim_teste.data.commom.OSIntentsApi
 import com.joaquim.joaquim_teste.data.commom.SetToastMessage
 import com.joaquim.joaquim_teste.data.commom.VerifyNetwork
 import org.koin.core.context.loadKoinModules
@@ -17,7 +18,8 @@ private val loadFeature by lazy {
         listOf(
             verifyNetworkStatus,
             setToastMessageModule,
-            checkPermissions
+            checkPermissions,
+            osIntentsAPi
         )
     )
 }
@@ -40,6 +42,11 @@ val setToastMessageModule: Module = module {
 val checkPermissions: Module = module {
     single { CheckPermissions() }
 }
+
+val osIntentsAPi: Module = module {
+    single { OSIntentsApi() }
+}
+
 
 
 

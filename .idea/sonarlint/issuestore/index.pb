@@ -1,30 +1,12 @@
 
-Ü
-Vapp/src/main/java/com/joaquim/joaquim_teste/data/model/checkIn/EventCheckInResponse.kt,0\9\09a4d033d2448bb4bd2d5db1b46ac350af6a8dd9
-Å
-Qapp/src/main/java/com/joaquim/joaquim_teste/data/repository/checkin/CheckInBox.kt,e\3\e3d5f89ae3881d0bd13a51cfb9edfe35bce2f067
-~
-Napp/src/main/java/com/joaquim/joaquim_teste/data/model/checkIn/EventCheckIn.kt,8\e\8e99ee50d5c54521c12c745a6d08e61aac865f58
-à
-Xapp/src/main/java/com/joaquim/joaquim_teste/data/repository/checkin/CheckInRepository.kt,0\c\0c6979f3c243a22bc668a54231aa19d5bf308ca2
-é
-^app/src/main/java/com/joaquim/joaquim_teste/data/model/checkIn/LocalObjectBoxDbEventCheckIn.kt,1\4\1413c5df111fd29ed63083516cc2d12f6dbaf40d
-t
-Dapp/src/main/java/com/joaquim/joaquim_teste/data/commom/ObjectBox.kt,5\c\5cb1a6b355a0660b5167415f816779a8daeedf99
 Ñ
 Tapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/ViewExtensions.kt,f\1\f12f3b3a341ba5d249cf205bd781e17ff63f12a1
-^
-.app/src/release/res/values/google_maps_api.xml,8\a\8ad28fcd8d693ab58d4fdb7d36965532163ebfa3
 {
 Kapp/src/main/java/com/joaquim/joaquim_teste/data/commom/CheckPermissions.kt,9\c\9c0b9d65313449b7a37d8b2c6afdb2a44a84b0e3
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-Q
-!app/objectbox-models/default.json,e\6\e6733a8dc693320a6372b490b200cc8c2fa2b484
-U
-%app/objectbox-models/default.json.bak,e\8\e86a0de7df8ae1be9d7976d78cd32c406a65ffd7
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -34,9 +16,25 @@ U
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
 x
 Happ/src/main/java/com/joaquim/joaquim_teste/data/commom/VerifyNetwork.kt,3\6\3606b002264885f1a3d8b24ae2efe68f819bfa52
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 Ä
 Papp/src/main/java/com/joaquim/joaquim_teste/ui/home/adapter/HomeEventsAdapter.kt,3\9\39036a1f91453371c75e7cffc3505170f13451ad
 â
 Yapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/GoogleMapExtensions.kt,c\c\cc57b462913d210c53a75633b154e189e90b9da7
+s
+Capp/src/main/java/com/joaquim/joaquim_teste/data/model/user/User.kt,2\9\29c85c7f4a4b9d7d10a28bf82124fa11f79373cf
+Ä
+Papp/src/main/java/com/joaquim/joaquim_teste/data/model/event/EventDetailsItem.kt,4\d\4de6c69e686161b500f20e63ba2ac39c57d3743c
+É
+Sapp/src/main/java/com/joaquim/joaquim_teste/data/model/user/LocalObjectBoxDbUser.kt,5\3\53ef9a214bc15af8dd49d20335726b4f49d53435
+ö
+japp/src/main/java/com/joaquim/joaquim_teste/ui/requestPermissions/RequestLocationPermissionBottomDialog.kt,5\e\5e1ceec1b0d36f267f791662ae2a05c07aadf3b8
+Ç
+Rapp/src/main/java/com/joaquim/joaquim_teste/data/repository/user/UserRepository.kt,a\d\ad4fe77a277d22bc342afad0d124176c41664924
+ë
+aapp/src/main/java/com/joaquim/joaquim_teste/koinModules/remoteData/remoteEventDataSourceModule.kt,5\9\59985522caf5575d3d9193d0a391062b769f2c7f
+Ü
+Vapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/StringExtensions.kt,1\b\1b7fc5ede3a86141150092511c8cfbb2b5453ba8
+ê
+`app/src/main/java/com/joaquim/joaquim_teste/data/model/event/LocalObjectBoxDbEventDetailsItem.kt,a\c\ac5d15f99860a4e03a58dea363fa1ab42b185f9e
+l
+<app/src/main/java/com/joaquim/joaquim_teste/MyApplication.kt,0\2\02ba0e8cdb7f27f19d706870ded3fa966d1b5abe

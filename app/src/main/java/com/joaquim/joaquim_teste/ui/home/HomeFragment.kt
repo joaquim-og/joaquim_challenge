@@ -76,8 +76,8 @@ class HomeFragment : Fragment() {
             }
 
             performActionIfIsNOTConnected {
-                homeLoadingLottieAnimation.hide()
                 homeNoWifiLottieAnimation.show()
+                homeLoadingLottieAnimation.hide()
                 toastMessage.setToastMessage(R.string.no_network_error)
             }
         }

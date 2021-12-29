@@ -2,6 +2,7 @@ package com.joaquim.joaquim_teste.data.repository.event
 
 import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetails
 import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetailsItem
+import com.joaquim.joaquim_teste.data.model.user.LocalObjectBoxDbUser
 
 interface EventRepository {
 
@@ -13,6 +14,12 @@ interface EventRepository {
 
     fun getEvents()
 
-    fun getAllLocalEvents():  List<LocalObjectBoxDbEventDetails>?
+    fun getAllLocalEvents(): List<LocalObjectBoxDbEventDetails>?
+
+    fun sendServerCheckIn(
+        event: LocalObjectBoxDbEventDetailsItem?,
+        localUser: LocalObjectBoxDbUser?,
+        eventChecked: (Boolean) -> Unit
+    )
 
 }

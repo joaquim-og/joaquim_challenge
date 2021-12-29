@@ -21,4 +21,15 @@
     <string name="fragment_request_location_dialog_button">Entendi</string>
     <string name="error_get_api_data">Não foi possível acessar os eventos agora. Tente novamente mais tarde</string>
 
+    <!--Event Share-->
+    <string name="generic_text_share_intent_generic">Oi! Eu vou nesse evento e talvez você também queira ir!\n\n#event_title\n\nNo dia: #event_date\n\nE vai ser aqui: #maps_url</string>
+    <string name="generic_error_on_share_event">Não conseguimos compartilhar o evento agora. Tente novamente mais tarde</string>
+
+    <!--Event CheckIn-->
+    <string name="fragmentEventDetailsCheckInSwitch">Eu vou ao evento</string>
+    <string name="successfully_register_event_checkin">Checkin realizado com sucesso!</string>
+    <string name="error_register_event_checkin">Não foi possivel realizar o checkin agora. Tente novamente mais tarde.</string>
+    <string name="successfully_deleted_register_event_checkin">Checkin no evento desfeito com sucesso!</string>
+    <string name="error_on_delete_register_event_checkin">Não foi possível desfazer o checkin agora. Tente novamente mais tarde.</string>
+
 </resources>

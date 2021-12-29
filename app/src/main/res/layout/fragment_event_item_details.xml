@@ -11,8 +11,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="top">
+            android:layout_gravity="top"
+            android:layout_marginTop="5dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fragmentEventDetailsMapConstraint"
@@ -52,10 +52,10 @@
                     android:layout_marginTop="10dp"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:scaleType="centerCrop" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragmentEventDetailsTitle"
@@ -66,6 +66,8 @@
                     android:maxLines="2"
                     android:textAlignment="center"
                     android:textSize="@dimen/general_title_dimen"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_share_24"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsImage"
@@ -138,6 +140,20 @@
                         tools:text="@string/general_text_place_holder_text" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fragmentEventDetailsCheckInSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/fragmentEventDetailsCheckInSwitch"
+                    android:textSize="@dimen/card_home_event_detail_normal_dimen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsLinearLayout"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
