@@ -19,5 +19,6 @@
     <string name="fragment_request_location_dialog_title">Precisamos de sua localização</string>
     <string name="fragment_request_location_dialog_text">Precisamos de sua autorização para exibirmos o mapa com a localização do evento selecionado 😉.</string>
     <string name="fragment_request_location_dialog_button">Entendi</string>
+    <string name="error_get_api_data">Não foi possível acessar os eventos agora. Tente novamente mais tarde</string>
 
 </resources>

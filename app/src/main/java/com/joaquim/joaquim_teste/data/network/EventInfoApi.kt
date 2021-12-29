@@ -6,12 +6,12 @@ import retrofit2.http.*
 
 interface EventInfoApi {
 
-    @GET("/events")
+    @GET("events")
     fun getEventGeneralInfo(): Call<EventDetails>
 
 
     @Headers("Content-Type: application/json")
-    @POST("/checkin?eventId")
+    @POST("checkin?eventId")
     fun postEventCheckIn(
         @Body eventId: String?,
         @Body userEmail: String?,

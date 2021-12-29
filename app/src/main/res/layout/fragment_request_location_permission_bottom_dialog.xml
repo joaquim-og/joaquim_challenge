@@ -9,8 +9,7 @@
         android:id="@+id/fragment_request_location_dialog_scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
-        android:background="@android:color/white">
+        android:layout_marginTop="?android:attr/actionBarSize">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

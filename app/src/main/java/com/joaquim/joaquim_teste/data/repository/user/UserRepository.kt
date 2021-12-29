@@ -5,8 +5,7 @@ import com.joaquim.joaquim_teste.data.model.user.LocalObjectBoxDbUser
 interface UserRepository {
 
     fun createLocalUser(
-        user: LocalObjectBoxDbUser,
-        userCreated: (boolean: Boolean) -> Unit
+        user: LocalObjectBoxDbUser
     )
 
     fun getLocalUser(userUid: String?): LocalObjectBoxDbUser?

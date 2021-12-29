@@ -1,11 +1,12 @@
 package com.joaquim.joaquim_teste
 
-import android.app.Application
 import androidx.multidex.MultiDexApplication
 import com.joaquim.joaquim_teste.data.commom.ObjectBox
 import com.joaquim.joaquim_teste.data.commom.SharedPrefs
+import com.joaquim.joaquim_teste.koinModules.EventData.injectEventsDataModule
 import com.joaquim.joaquim_teste.koinModules.commom.injectCommonClassesModule
 import com.joaquim.joaquim_teste.koinModules.home.injectHomeModule
+import com.joaquim.joaquim_teste.koinModules.remoteData.injectRemoteDataModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -36,6 +37,8 @@ class MyApplication : MultiDexApplication() {
 
         injectCommonClassesModule()
         injectHomeModule()
+        injectEventsDataModule()
+        injectRemoteDataModule()
 
     }
 

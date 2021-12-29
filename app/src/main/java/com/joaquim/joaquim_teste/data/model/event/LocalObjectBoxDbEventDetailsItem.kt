@@ -44,5 +44,4 @@ data class LocalObjectBoxDbEventDetailsItem(
 ) {
 
     var eventDetailPeople: ToMany<LocalObjectBoxDbUser> = ToMany(this, LocalObjectBoxDbEventDetailsItem_.eventDetailPeople)
-//    domainObject.learningUnits.addAll(learningUnitDataMapper.toDomainList(it, responseObject.id))
 }

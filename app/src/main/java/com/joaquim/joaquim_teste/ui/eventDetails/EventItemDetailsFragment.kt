@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.joaquim.joaquim_teste.MyApplication.Companion.globalContext
 import com.joaquim.joaquim_teste.R
 import com.joaquim.joaquim_teste.data.commom.extensions.changeSeparator
+import com.joaquim.joaquim_teste.data.commom.extensions.fromHtml
 import com.joaquim.joaquim_teste.data.commom.extensions.setMarkerLocation
 import com.joaquim.joaquim_teste.data.commom.extensions.toDate
 import com.joaquim.joaquim_teste.databinding.FragmentEventItemDetailsBinding
@@ -117,7 +118,7 @@ class EventItemDetailsFragment : Fragment() {
                         Html.fromHtml(eventDetailDescription)
                     }
 
-                    eventItemDetailsDescription.text = spannedDetail
+                    eventItemDetailsDescription.text = eventDetailDescription?.fromHtml(globalContext, eventItemDetailsDescription)
 
                     Glide.with(globalContext)
                         .load(eventDetailImage)
