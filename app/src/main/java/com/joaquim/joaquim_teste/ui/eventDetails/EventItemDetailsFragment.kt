@@ -15,17 +15,22 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.joaquim.joaquim_teste.MyApplication.Companion.globalContext
 import com.joaquim.joaquim_teste.R
+import com.joaquim.joaquim_teste.data.commom.OSIntentsApi
+import com.joaquim.joaquim_teste.data.commom.SetToastMessage
 import com.joaquim.joaquim_teste.data.commom.extensions.changeSeparator
 import com.joaquim.joaquim_teste.data.commom.extensions.fromHtml
 import com.joaquim.joaquim_teste.data.commom.extensions.setMarkerLocation
 import com.joaquim.joaquim_teste.data.commom.extensions.toDate
 import com.joaquim.joaquim_teste.databinding.FragmentEventItemDetailsBinding
 import com.joaquim.joaquim_teste.ui.HomeEventViewModel
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class EventItemDetailsFragment : Fragment() {
 
     private val homeViewModel: HomeEventViewModel by sharedViewModel()
+    private val osIntentsApi: OSIntentsApi by inject()
+    private val toastMessage: SetToastMessage by inject()
 
     private var _binding: FragmentEventItemDetailsBinding? = null
     private val binding get() = _binding!!
@@ -100,6 +105,12 @@ class EventItemDetailsFragment : Fragment() {
         homeViewModel.selectedEvent.observe(viewLifecycleOwner, Observer { selectedEvent ->
             selectedEvent?.let { eventDetails ->
 
+                eventItemDetailsTitle.setOnClickListener {
+                    osIntentsApi.openOSShare(context, selectedEvent) {
+                        toastMessage.setToastMessage(R.string.generic_error_on_share_event)
+                    }
+                }
+
                 with(eventDetails) {
                     eventItemDetailsTitle.text = eventDetailTitle
                     eventItemDetailsDate.text = eventDetailDate?.let {
@@ -112,13 +123,8 @@ class EventItemDetailsFragment : Fragment() {
                         eventDetailPrice?.changeSeparator()
                     )
 
-                    val spannedDetail = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Html.fromHtml(eventDetailDescription, Html.FROM_HTML_MODE_LEGACY)
-                    } else {
-                        Html.fromHtml(eventDetailDescription)
-                    }
-
-                    eventItemDetailsDescription.text = eventDetailDescription?.fromHtml(globalContext, eventItemDetailsDescription)
+                    eventItemDetailsDescription.text =
+                        eventDetailDescription?.fromHtml(globalContext, eventItemDetailsDescription)
 
                     Glide.with(globalContext)
                         .load(eventDetailImage)
