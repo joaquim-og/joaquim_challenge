@@ -15,7 +15,7 @@ data class LocalObjectBoxDbEventDetailsItem(
     var boxId: Long = 0L,
 
     @NameInDb("eventDetailDate")
-    var eventDetailDate: Long? = null,
+    var eventDetailDate: String? = null,
 
     @NameInDb("eventDetailTitle")
     var eventDetailTitle: String? = null,
@@ -36,7 +36,7 @@ data class LocalObjectBoxDbEventDetailsItem(
     var eventDetailLng: String? = null,
 
     @NameInDb("eventDetailPrice")
-    var eventDetailPrice: Double? = null,
+    var eventDetailPrice: String? = null,
 
     @NameInDb("eventDetailUID")
     var eventDetailUID: String? = "${eventDetailId}_${eventDetailTitle}",
@@ -44,5 +44,4 @@ data class LocalObjectBoxDbEventDetailsItem(
 ) {
 
     var eventDetailPeople: ToMany<LocalObjectBoxDbUser> = ToMany(this, LocalObjectBoxDbEventDetailsItem_.eventDetailPeople)
-//    domainObject.learningUnits.addAll(learningUnitDataMapper.toDomainList(it, responseObject.id))
 }

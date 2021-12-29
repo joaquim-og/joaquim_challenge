@@ -10,7 +10,7 @@ class RemoteDataSourceEventInfo {
 
     private val retrofitClient: Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://5f5a8f24d44d640016169133.mockapi.io/api")
+            .baseUrl("https://5f5a8f24d44d640016169133.mockapi.io/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     private val endpoint = retrofitClient.create(EventInfoApi::class.java)

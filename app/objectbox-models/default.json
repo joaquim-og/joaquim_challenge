@@ -56,7 +56,7 @@
         {
           "id": "3:8960655062561271047",
           "name": "eventDetailDate",
-          "type": 6
+          "type": 9
         },
         {
           "id": "4:1705937323032585848",
@@ -91,7 +91,7 @@
         {
           "id": "10:2681758065428714369",
           "name": "eventDetailPrice",
-          "type": 8
+          "type": 9
         }
       ],
       "relations": [

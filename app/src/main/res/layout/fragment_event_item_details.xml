@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.eventDetails.EventItemDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="top">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragmentEventDetailsMapConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                app:layout_constraintBottom_toTopOf="@+id/fragmentEventDetailsTextsConstraint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/fragmentEventDetailsMapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="212dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragmentEventDetailsTextsConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsMapConstraint">
+
+                <ImageView
+                    android:id="@+id/fragmentEventDetailsImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/fragmentEventDetailsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/general_title_dimen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsImage"
+                    tools:text="@string/general_text_place_holder_title" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/fragmentEventDetailsLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="left"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:weightSum="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsTitle">
+
+                    <TextView
+                        android:id="@+id/fragmentEventDetailsDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:ellipsize="end"
+                        android:maxWidth="304dp"
+                        android:maxLines="2"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/card_home_event_detail_normal_dimen"
+                        app:drawableStartCompat="@drawable/ic_baseline_calendar_today_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/patientDetailsTextsPatientLinearFirst"
+                        tools:text="@string/general_text_place_holder_text" />
+
+                    <TextView
+                        android:id="@+id/fragmentEventDetailsPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="10dp"
+                        android:ellipsize="end"
+                        android:maxWidth="304dp"
+                        android:maxLines="2"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/card_home_event_detail_normal_dimen"
+                        app:drawableStartCompat="@drawable/ic_baseline_monetization_on_24"
+                        tools:text="@string/general_text_place_holder_price_text" />
+
+                    <TextView
+                        android:id="@+id/fragmentEventDetailsDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
+                        android:ellipsize="end"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/card_home_event_detail_normal_dimen"
+                        app:drawableStartCompat="@drawable/ic_baseline_description_24"
+                        app:layout_constraintStart_toStartOf="@+id/patientDetailsTextsPatientType"
+                        app:layout_constraintTop_toBottomOf="@+id/patientDetailsTextsPatientType"
+                        tools:text="@string/general_text_place_holder_text" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

@@ -11,4 +11,8 @@ interface EventRepository {
 
     fun getLocalEvent(eventId: String?): LocalObjectBoxDbEventDetailsItem?
 
+    fun getEvents()
+
+    fun getAllLocalEvents():  List<LocalObjectBoxDbEventDetails>?
+
 }
