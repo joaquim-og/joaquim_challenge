@@ -155,9 +155,28 @@
           "targetId": "2:2337123339834781714"
         }
       ]
+    },
+    {
+      "id": "5:1347316299980770559",
+      "lastPropertyId": "2:3652038381486294648",
+      "name": "LocalObjectBoxDbTimeRegister",
+      "properties": [
+        {
+          "id": "1:9153789540971267152",
+          "name": "boxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3652038381486294648",
+          "name": "lastUpdate",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "4:4198216423527204966",
+  "lastEntityId": "5:1347316299980770559",
   "lastIndexId": "0:0",
   "lastRelationId": "2:6108419627592309719",
   "lastSequenceId": "0:0",

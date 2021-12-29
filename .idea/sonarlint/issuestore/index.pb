@@ -9,8 +9,6 @@ Napp/src/main/java/com/joaquim/joaquim_teste/data/model/checkIn/EventCheckIn.kt
 Xapp/src/main/java/com/joaquim/joaquim_teste/data/repository/checkin/CheckInRepository.kt,0\c\0c6979f3c243a22bc668a54231aa19d5bf308ca2
 Ž
 ^app/src/main/java/com/joaquim/joaquim_teste/data/model/checkIn/LocalObjectBoxDbEventCheckIn.kt,1\4\1413c5df111fd29ed63083516cc2d12f6dbaf40d
-t
-Dapp/src/main/java/com/joaquim/joaquim_teste/data/commom/ObjectBox.kt,5\c\5cb1a6b355a0660b5167415f816779a8daeedf99
 „
 Tapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/ViewExtensions.kt,f\1\f12f3b3a341ba5d249cf205bd781e17ff63f12a1
 ^
@@ -21,10 +19,6 @@ Kapp/src/main/java/com/joaquim/joaquim_teste/data/commom/CheckPermissions.kt,9\
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-Q
-!app/objectbox-models/default.json,e\6\e6733a8dc693320a6372b490b200cc8c2fa2b484
-U
-%app/objectbox-models/default.json.bak,e\8\e86a0de7df8ae1be9d7976d78cd32c406a65ffd7
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -46,8 +40,6 @@ s
 Capp/src/main/java/com/joaquim/joaquim_teste/data/model/user/User.kt,2\9\29c85c7f4a4b9d7d10a28bf82124fa11f79373cf
 €
 Papp/src/main/java/com/joaquim/joaquim_teste/data/model/event/EventDetailsItem.kt,4\d\4de6c69e686161b500f20e63ba2ac39c57d3743c
-Œ
-\app/src/main/java/com/joaquim/joaquim_teste/data/model/event/LocalObjectBoxDbEventDetails.kt,4\0\409f63659432690e8dce92bd75d378cedfed991a
 ƒ
 Sapp/src/main/java/com/joaquim/joaquim_teste/data/model/user/LocalObjectBoxDbUser.kt,5\3\53ef9a214bc15af8dd49d20335726b4f49d53435
 |
@@ -58,8 +50,6 @@ japp/src/main/java/com/joaquim/joaquim_teste/ui/requestPermissions/RequestLocati
 Tapp/src/main/java/com/joaquim/joaquim_teste/data/repository/event/EventRepository.kt,f\8\f8395f79ec0c05fc82299f5c0783db7a6dfaa504
 
 Oapp/src/main/java/com/joaquim/joaquim_teste/koinModules/home/HomeKoinModules.kt,7\5\75b19f0187285fff4dcf62f848e5aa3775e5b5c4
-}
-Mapp/src/main/java/com/joaquim/joaquim_teste/data/repository/event/EventBox.kt,5\5\559dc7f7fcdb1d872f83201c865bc0b28dbdcaf7
 ‚
 Rapp/src/main/java/com/joaquim/joaquim_teste/data/repository/user/UserRepository.kt,a\d\ad4fe77a277d22bc342afad0d124176c41664924
 {
@@ -78,7 +68,5 @@ n
 >app/src/main/java/com/joaquim/joaquim_teste/ui/HomeActivity.kt,7\a\7aabf689c40187f386652ddea0d0d8de015c5da4
 l
 <app/src/main/java/com/joaquim/joaquim_teste/MyApplication.kt,0\2\02ba0e8cdb7f27f19d706870ded3fa966d1b5abe
-u
-Eapp/src/main/java/com/joaquim/joaquim_teste/data/commom/ErrorsTags.kt,4\0\4005de702bcea586efb241d49d33e23b2e1d66a2
 …
 Uapp/src/main/java/com/joaquim/joaquim_teste/data/network/RemoteDataSourceEventInfo.kt,7\e\7ef843ea6ef508ac32ef052d222611716a9e69ac

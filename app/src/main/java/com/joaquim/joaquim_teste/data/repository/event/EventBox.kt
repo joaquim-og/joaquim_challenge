@@ -5,14 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.joaquim.joaquim_teste.data.commom.ErrorsTags.EVENT_DETAILS_ERROR
 import com.joaquim.joaquim_teste.data.commom.ErrorsTags.EVENT_ITEM_NOT_CREATED
 import com.joaquim.joaquim_teste.data.commom.ErrorsTags.SERVER_DATA_ERROR
 import com.joaquim.joaquim_teste.data.commom.ObjectBox
 import com.joaquim.joaquim_teste.data.commom.extensions.addHttpsIfNeeded
-import com.joaquim.joaquim_teste.data.model.event.EventDetails
-import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetails
-import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetailsItem
-import com.joaquim.joaquim_teste.data.model.event.LocalObjectBoxDbEventDetailsItem_
+import com.joaquim.joaquim_teste.data.model.event.*
+import com.joaquim.joaquim_teste.data.model.localRegister.LocalObjectBoxDbTimeRegister
 import com.joaquim.joaquim_teste.data.model.user.LocalObjectBoxDbUser
 import com.joaquim.joaquim_teste.data.network.RemoteDataSourceEventInfo
 import retrofit2.Call
@@ -29,32 +28,13 @@ class EventBox(
     private val eventItemBox =
         ObjectBox.boxStore.boxFor(LocalObjectBoxDbEventDetailsItem::class.java)
     private val eventsBox = ObjectBox.boxStore.boxFor(LocalObjectBoxDbEventDetails::class.java)
-
-    override fun createLocalEvents(
-        events: LocalObjectBoxDbEventDetails
-    ) {
-
-        events.eventDetailsInfos.forEach { eventDetailItem ->
-
-            val eventExists = getLocalEvent(eventDetailItem.eventDetailId)
-
-            try {
-                if (eventExists == null) {
-                    eventItemBox.put(eventDetailItem)
-                }
-            } catch (e: Error) {
-                Log.d(EVENT_ITEM_NOT_CREATED, "Here why -> ${e.localizedMessage}")
-            }
-
-        }
-
-    }
+    private val lastTimeGetServerDataBox = ObjectBox.boxStore.boxFor(LocalObjectBoxDbTimeRegister::class.java)
 
     override fun getEvents() {
 
         val localEventExists = getAllLocalEvents()
 
-        if (localEventExists.isNullOrEmpty()) {
+        if (localEventExists.isNullOrEmpty() || isTimeToUpdateLocalData()) {
             getRemoteEventInfo { eventDetails ->
                 _localEvents.postValue(eventDetails)
             }
@@ -73,6 +53,44 @@ class EventBox(
     }
 
     override fun getAllLocalEvents(): List<LocalObjectBoxDbEventDetails>? = eventsBox.all
+
+    private fun getLocalEventDetails(eventDetailItemId: String?): LocalObjectBoxDbEventDetails? {
+        val query =
+            eventsBox.query(LocalObjectBoxDbEventDetails_.eventDetailsUID.equal(eventDetailItemId))
+                .build()
+
+        return query.findUnique()
+    }
+
+    override fun createLocalEvents(
+        events: LocalObjectBoxDbEventDetails
+    ) {
+
+        val eventDetailsExists = getLocalEventDetails(events.eventDetailsUID)
+
+        try {
+            if (eventDetailsExists == null) {
+                eventsBox.put(events)
+            }
+        } catch (e: Error) {
+            Log.d(EVENT_DETAILS_ERROR, "Here why -> ${e.localizedMessage}")
+        }
+
+        events.eventDetailsInfos.forEach { eventDetailItem ->
+
+            val eventExists = getLocalEvent(eventDetailItem.eventDetailId)
+
+            try {
+                if (eventExists == null) {
+                    eventItemBox.put(eventDetailItem)
+                }
+            } catch (e: Error) {
+                Log.d(EVENT_ITEM_NOT_CREATED, "Here why -> ${e.localizedMessage}")
+            }
+
+        }
+
+    }
 
     private fun getRemoteEventInfo(eventsDetails: (List<LocalObjectBoxDbEventDetails>?) -> Unit) {
         val getRemoteInfoQueue = remoteDataSourceEvent.getEventGeneralInfo()
@@ -125,6 +143,8 @@ class EventBox(
                                 localEventDetails.eventDetailsInfos.add(localEventDetailsItem)
 
                                 localEventsDetails.add(localEventDetails)
+                                createLocalEvents(localEventDetails)
+                                registerTimeLocalDataUpdated()
                             }
 
                             eventsDetails(localEventsDetails)
@@ -165,5 +185,14 @@ class EventBox(
         })
 
     }
+
+    private fun registerTimeLocalDataUpdated() = lastTimeGetServerDataBox.put(LocalObjectBoxDbTimeRegister())
+
+    private fun isTimeToUpdateLocalData() : Boolean {
+        val lastUpdated = lastTimeGetServerDataBox.all.last()
+
+        return lastUpdated.hasPassedMinimumIntervalToCheckServerAgain()
+    }
+
 
 }
