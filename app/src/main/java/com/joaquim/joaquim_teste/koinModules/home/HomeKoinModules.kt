@@ -18,7 +18,7 @@ private val loadFeature by lazy {
 
 val viewModelModule: Module = module {
     viewModel {
-        HomeEventViewModel(get(), get())
+        HomeEventViewModel(get(), get(), get())
     }
 }
 

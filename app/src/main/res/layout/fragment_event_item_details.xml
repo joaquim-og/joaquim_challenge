@@ -141,6 +141,20 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/fragmentEventDetailsCheckInSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/fragmentEventDetailsCheckInSwitch"
+                    android:textSize="@dimen/card_home_event_detail_normal_dimen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragmentEventDetailsLinearLayout"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,5 +1,6 @@
 package com.joaquim.joaquim_teste.koinModules.EventData
 
+import com.joaquim.joaquim_teste.data.repository.checkin.CheckInBox
 import com.joaquim.joaquim_teste.data.repository.event.EventBox
 import com.joaquim.joaquim_teste.data.repository.user.UserBox
 import org.koin.core.context.loadKoinModules
@@ -11,15 +12,19 @@ fun injectEventsDataModule() = loadFeature
 private val loadFeature by lazy {
     loadKoinModules(
         listOf(
-            EventsInfo, UserInfo
+            EventsInfo, UserInfo, EventCheckIn
         )
     )
 }
 
 val EventsInfo: Module = module {
-    single { EventBox(get()) }
+    single { EventBox(get(), get()) }
 }
 
 val UserInfo: Module = module {
     single { UserBox() }
+}
+
+val EventCheckIn: Module = module {
+    single { CheckInBox() }
 }

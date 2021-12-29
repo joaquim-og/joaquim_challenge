@@ -1,9 +1,7 @@
 package com.joaquim.joaquim_teste.ui.eventDetails
 
-import android.os.Build
 import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,14 +11,12 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.joaquim.joaquim_teste.MyApplication.Companion.globalContext
 import com.joaquim.joaquim_teste.R
 import com.joaquim.joaquim_teste.data.commom.OSIntentsApi
 import com.joaquim.joaquim_teste.data.commom.SetToastMessage
-import com.joaquim.joaquim_teste.data.commom.extensions.changeSeparator
-import com.joaquim.joaquim_teste.data.commom.extensions.fromHtml
-import com.joaquim.joaquim_teste.data.commom.extensions.setMarkerLocation
-import com.joaquim.joaquim_teste.data.commom.extensions.toDate
+import com.joaquim.joaquim_teste.data.commom.extensions.*
 import com.joaquim.joaquim_teste.databinding.FragmentEventItemDetailsBinding
 import com.joaquim.joaquim_teste.ui.HomeEventViewModel
 import org.koin.android.ext.android.inject
@@ -44,6 +40,7 @@ class EventItemDetailsFragment : Fragment() {
     private lateinit var eventItemDetailsPrice: TextView
     private lateinit var eventItemDetailsDescription: TextView
     private lateinit var eventItemDetailsImageView: ImageView
+    private lateinit var eventItemDetailsCheckInSwitch: SwitchMaterial
 
     private val callback = OnMapReadyCallback { googleMap ->
         mapGoogle = googleMap
@@ -84,6 +81,34 @@ class EventItemDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setMapUiConfig(savedInstanceState)
+
+        if (homeViewModel.userHasCheckedEvent()){
+            eventItemDetailsCheckInSwitch.setSwitchChecked()
+        }
+
+        eventItemDetailsCheckInSwitch.setOnCheckedChangeListener { buttonView, _ ->
+                if (buttonView.isChecked) {
+                    homeViewModel.registerUserCheck { appointmentRegistered ->
+                        if (appointmentRegistered) {
+                            toastMessage.setToastMessage(R.string.successfully_register_event_checkin)
+                            vibratePhone()
+                        } else {
+                            unCheckSwitch()
+                            toastMessage.setToastMessage(R.string.error_register_event_checkin)
+                        }
+                    }
+                } else {
+                    homeViewModel.deleteRegisterUserCheck { registerDeleted ->
+                        if (registerDeleted) {
+                            toastMessage.setToastMessage(R.string.successfully_deleted_register_event_checkin)
+                            vibratePhone()
+                        } else {
+                            checkSwitch()
+                            toastMessage.setToastMessage(R.string.error_on_delete_register_event_checkin)
+                        }
+                    }
+                }
+            }
     }
 
     private fun setupBindingVariables() {
@@ -94,6 +119,7 @@ class EventItemDetailsFragment : Fragment() {
             eventItemDetailsDescription = fragmentEventDetailsDescription
             eventItemDetailsImageView = fragmentEventDetailsImage
             mapView = fragmentEventDetailsMapView
+            eventItemDetailsCheckInSwitch = fragmentEventDetailsCheckInSwitch
         }
     }
 
@@ -169,6 +195,14 @@ class EventItemDetailsFragment : Fragment() {
     override fun onLowMemory() {
         super.onLowMemory()
         mapView.onLowMemory()
+    }
+
+    private fun unCheckSwitch() {
+        eventItemDetailsCheckInSwitch.setSwitchUnChecked()
+    }
+
+    private fun checkSwitch() {
+        eventItemDetailsCheckInSwitch.setSwitchChecked()
     }
 
     override fun onDestroyView() {

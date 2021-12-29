@@ -1,5 +1,7 @@
 package com.joaquim.joaquim_teste.data.network
 
+import com.joaquim.joaquim_teste.data.model.checkIn.EventCheckIn
+import com.joaquim.joaquim_teste.data.model.checkIn.EventCheckInResponse
 import com.joaquim.joaquim_teste.data.model.event.EventDetails
 import retrofit2.Call
 import retrofit2.http.*
@@ -13,10 +15,7 @@ interface EventInfoApi {
     @Headers("Content-Type: application/json")
     @POST("checkin?eventId")
     fun postEventCheckIn(
-        @Body eventId: String?,
-        @Body userEmail: String?,
-        @Body userName: String?,
-        @Body userUid: String?
-    ): Call<EventDetails>
+        @Body eventToCheckIn: EventCheckIn?
+    ): Call<EventCheckInResponse>
 
 }

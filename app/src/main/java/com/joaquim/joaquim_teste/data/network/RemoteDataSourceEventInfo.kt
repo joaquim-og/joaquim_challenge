@@ -1,7 +1,8 @@
 package com.joaquim.joaquim_teste.data.network
 
+import com.joaquim.joaquim_teste.data.model.checkIn.EventCheckIn
+import com.joaquim.joaquim_teste.data.model.checkIn.EventCheckInResponse
 import com.joaquim.joaquim_teste.data.model.event.EventDetails
-import com.joaquim.joaquim_teste.data.model.user.LocalObjectBoxDbUser
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,12 +19,9 @@ class RemoteDataSourceEventInfo {
     fun getEventGeneralInfo(): Call<EventDetails> =
         endpoint.getEventGeneralInfo()
 
-    fun postEventCheckIn(user: LocalObjectBoxDbUser, eventId: String): Call<EventDetails> =
+    fun postEventCheckIn(eventToCheckIn: EventCheckIn): Call<EventCheckInResponse> =
         endpoint.postEventCheckIn(
-            eventId,
-            user.userEmail,
-            user.userName,
-            user.userUid
+            eventToCheckIn
         )
 
 }
