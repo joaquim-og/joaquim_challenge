@@ -1,12 +1,6 @@
 
-„
-Tapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/ViewExtensions.kt,f\1\f12f3b3a341ba5d249cf205bd781e17ff63f12a1
 {
 Kapp/src/main/java/com/joaquim/joaquim_teste/data/commom/CheckPermissions.kt,9\c\9c0b9d65313449b7a37d8b2c6afdb2a44a84b0e3
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -18,23 +12,13 @@ x
 Happ/src/main/java/com/joaquim/joaquim_teste/data/commom/VerifyNetwork.kt,3\6\3606b002264885f1a3d8b24ae2efe68f819bfa52
 €
 Papp/src/main/java/com/joaquim/joaquim_teste/ui/home/adapter/HomeEventsAdapter.kt,3\9\39036a1f91453371c75e7cffc3505170f13451ad
-‰
-Yapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/GoogleMapExtensions.kt,c\c\cc57b462913d210c53a75633b154e189e90b9da7
-s
-Capp/src/main/java/com/joaquim/joaquim_teste/data/model/user/User.kt,2\9\29c85c7f4a4b9d7d10a28bf82124fa11f79373cf
 €
 Papp/src/main/java/com/joaquim/joaquim_teste/data/model/event/EventDetailsItem.kt,4\d\4de6c69e686161b500f20e63ba2ac39c57d3743c
-ƒ
-Sapp/src/main/java/com/joaquim/joaquim_teste/data/model/user/LocalObjectBoxDbUser.kt,5\3\53ef9a214bc15af8dd49d20335726b4f49d53435
 š
 japp/src/main/java/com/joaquim/joaquim_teste/ui/requestPermissions/RequestLocationPermissionBottomDialog.kt,5\e\5e1ceec1b0d36f267f791662ae2a05c07aadf3b8
 ‚
 Rapp/src/main/java/com/joaquim/joaquim_teste/data/repository/user/UserRepository.kt,a\d\ad4fe77a277d22bc342afad0d124176c41664924
 ‘
 aapp/src/main/java/com/joaquim/joaquim_teste/koinModules/remoteData/remoteEventDataSourceModule.kt,5\9\59985522caf5575d3d9193d0a391062b769f2c7f
-†
-Vapp/src/main/java/com/joaquim/joaquim_teste/data/commom/extensions/StringExtensions.kt,1\b\1b7fc5ede3a86141150092511c8cfbb2b5453ba8
-
-`app/src/main/java/com/joaquim/joaquim_teste/data/model/event/LocalObjectBoxDbEventDetailsItem.kt,a\c\ac5d15f99860a4e03a58dea363fa1ab42b185f9e
 l
 <app/src/main/java/com/joaquim/joaquim_teste/MyApplication.kt,0\2\02ba0e8cdb7f27f19d706870ded3fa966d1b5abe

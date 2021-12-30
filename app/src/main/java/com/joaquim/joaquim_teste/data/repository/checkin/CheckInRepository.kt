@@ -6,7 +6,7 @@ interface CheckInRepository {
 
     fun createLocalUserCheckIn(
         eventDetailUID: String?,
-        user: String?,
+        userUid: String?,
         userCheckedInEvent: (Boolean) -> Unit
     )
 

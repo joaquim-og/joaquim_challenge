@@ -25,6 +25,7 @@ fun String.fromHtml(context: Context, textView: TextView, localSource: String? =
     }
 }
 
+//Glide actual version only render images with https protocol
 fun String.addHttpsIfNeeded(keepSameString: Boolean = true): String {
     return when {
         this.startsWith("https") -> this
