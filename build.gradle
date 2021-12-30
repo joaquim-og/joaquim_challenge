@@ -10,6 +10,7 @@ buildscript {
         runtime_permissions = "3.2.1"
         lottieVersion = "4.2.2"
         kotlinX_datetime = "0.3.1"
+        google_truth_tests = "1.1.3"
     }
 
     repositories {
